@@ -20,3 +20,5 @@ axios.get("https:www.omdbapi.com").then(function (response) {
         }
         console.log(error.config);
     });
+
+console.log('Hi!');
