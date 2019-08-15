@@ -1,24 +1,56 @@
+require('dotenv').config();
+
+var request = require("request");
+var fs = require("fs");
+var keys = require("./keys.js");
+var Spotify = require('node-spotify-api');
+var spotify = new Spotify(keys.spotify);
 var axios = require("axios");
-axios.get("https:www.omdbapi.com").then(function (response) {
-    console.log(response);
-})
 
-    .catch(function (error) {
-        if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
-        } else if (error.request) {
-            // The request was made but no response was received
-            // `error.request` is an object that comes back with details pertaining to the error that occurred.
-            console.log(error.request);
-        } else {
-            // Something happened in setting up the request that triggered an Error
-            console.log("Error", error.message);
+//user inputs
+var command = process.argv[2];
+var input = process.argv[3];
+
+UserInputs(command, input);
+
+function UserInputs(command, input) {
+    switch (command) {
+        case 'spotify-this-song':
+            songInfo(input);
+            break;
+        case 'movie-this':
+            movieInfo(input);
+            break;
+        case 'do-what-it-says':
+            randomInfo();
+            break;
+    }
+}
+
+//function for spotify this song
+
+function songInfo(input) {
+    if (input === undefined) {
+        input = "The Sign";
+    }
+    spotify.search({ type: 'tracks', query: 'input' },
+        function (err, data) {
+            if (err) {
+                return console.log('Error Occurred:' + err);
+            }
+            var songs = data.tracks.items;
+
+            for (var i = 0; i < songs.length; i++) {
+                console.log(i);
+                console.log("Artist: " + songs[i].artists[0].name);
+                console.log("Song Name: " + songs[i].name);
+                console.log("Preview Song: " + songs[i].preview_url);
+                console.log("Album: " + songs[i].album.name);
+            }
         }
-        console.log(error.config);
-    });
 
-console.log('Hi!');
+    );
+
+};
+
+
