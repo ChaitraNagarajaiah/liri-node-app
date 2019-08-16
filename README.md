@@ -9,6 +9,7 @@ movie-this
 do-what-it-says
 
 Built With Node.js, Javascript
+
 APIs OMDB, Spotify.
 
 spotify-this--->	uses the spotify API to take a song name from the user and returns the artist, song name, spotify-link and album.
