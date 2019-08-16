@@ -47,6 +47,7 @@ function songInfo(input) {
             var song = data.tracks.items[0];
 
             console.log("--------------------------------------");
+            fs.appendFileSync("log.txt", "-----------------------\n");
             console.log("Artist: " + song.artists[0].name);
             fs.appendFileSync("log.txt", "Artist: " + song.artists[0] + "\n");
             console.log("Song Name: " + song.name);
@@ -56,6 +57,7 @@ function songInfo(input) {
             console.log("Album: " + song.album.name);
             fs.appendFileSync("log.txt", "Album: " + song.album.name + "\n");
             console.log("--------------------------------------");
+            fs.appendFileSync("log.txt", "-----------------------\n");
 
         }
 
@@ -71,7 +73,9 @@ function movieInfo(input) {
         input = "Mr. Nobody";
 
         console.log("If you haven't watched 'Mr.Nobody', then you should:http://www.imdb.com/title/tt0485947/");
+        fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/" + "\n");
         console.log("It's on Netflix!");
+        fs.appendFileSync("log.txt", "It's on Netflix!\n");
     }
     var movieName = input;
 
@@ -81,15 +85,25 @@ function movieInfo(input) {
         function (response) {
             // console.log(response.data);
             console.log("--------------------------------------");
+            fs.appendFileSync("log.txt", "-----------------------\n");
             console.log("Release Year: " + response.data.Year);
+            fs.appendFileSync("log.txt", "Release Year: " + response.data.Year + "\n");
             console.log("Title: " + response.data.Title);
+            fs.appendFileSync("log.txt", "Title: " + response.data.Title + "\n");
             console.log("IMDB Rating: " + response.data.imdbRating);
+            fs.appendFileSync("log.txt", "IMDB Rating: " + response.data.imdbRating + "\n");
             console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+            fs.appendFileSync("log.txt", "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n");
             console.log("Country of Production: " + response.data.Country);
+            fs.appendFileSync("log.txt", "Country of Production: " + response.data.Country + "\n");
             console.log("Language: " + response.data.Language);
+            fs.appendFileSync("log.txt", "Language: " + response.data.Language + "\n");
             console.log("Plot: " + response.data.Plot);
+            fs.appendFileSync("log.txt", "Plot: " + response.data.Plot + "\n");
             console.log("Actors: " + response.data.Actors);
+            fs.appendFileSync("log.txt", "Actors: " + response.data.Actors + "\n");
             console.log("--------------------------------------");
+            fs.appendFileSync("log.txt", "-----------------------\n");
         })
 }
 
