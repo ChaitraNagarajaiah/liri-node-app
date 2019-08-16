@@ -46,13 +46,13 @@ function songInfo(input) {
             }
             var song = data.tracks.items[0];
 
-            // for (var i = 0; i < songs.length; i++) {
-            //console.log(i);
+            console.log("--------------------------------------");
             console.log("Artist: " + song.artists[0].name);
             console.log("Song Name: " + song.name);
             console.log("Preview Song: " + song.preview_url);
             console.log("Album: " + song.album.name);
-            //  }
+            console.log("--------------------------------------");
+
         }
 
     );
@@ -76,6 +76,7 @@ function movieInfo(input) {
     axios.get(queryUrl).then(
         function (response) {
             // console.log(response.data);
+            console.log("--------------------------------------");
             console.log("Release Year: " + response.data.Year);
             console.log("Title: " + response.data.Title);
             console.log("IMDB Rating: " + response.data.imdbRating);
@@ -84,6 +85,7 @@ function movieInfo(input) {
             console.log("Language: " + response.data.Language);
             console.log("Plot: " + response.data.Plot);
             console.log("Actors: " + response.data.Actors);
+            console.log("--------------------------------------");
         })
 }
 
