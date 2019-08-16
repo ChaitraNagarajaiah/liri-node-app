@@ -48,11 +48,13 @@ function songInfo(input) {
 
             console.log("--------------------------------------");
             console.log("Artist: " + song.artists[0].name);
-
+            fs.appendFileSync("log.txt", "Artist: " + song.artists[0] + "\n");
             console.log("Song Name: " + song.name);
             fs.appendFileSync("log.txt", "Song Name: " + song.name + "\n");
             console.log("Preview Song: " + song.preview_url);
+            fs.appendFileSync("log.txt", "Preview Song: " + song.preview_url + "\n");
             console.log("Album: " + song.album.name);
+            fs.appendFileSync("log.txt", "Album: " + song.album.name + "\n");
             console.log("--------------------------------------");
 
         }
