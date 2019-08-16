@@ -19,3 +19,7 @@ movie-this--->	uses the OMDB API to take a movie name and returns the name, cast
 
 
 do-this	uses the built in readFile() method to access data from a prepopulated .txt file and return its information as a command/search query.
+
+Links:
+
+https://github.com/ChaitraNagarajaiah/liri-node-app
