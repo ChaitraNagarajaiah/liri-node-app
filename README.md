@@ -25,5 +25,3 @@ Links:
 https://github.com/ChaitraNagarajaiah/liri-node-app
 
 https://chaitranagarajaiah.github.io/liri-node-app/.
-
-![image](https://user-images.githubusercontent.com/50887666/67871519-db5a1400-fb06-11e9-906b-f5a92385a883.png)
